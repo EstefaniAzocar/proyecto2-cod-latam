@@ -1,0 +1,578 @@
+/* En este archivo escriban su CSS */
+
+/* Fonts */
+/* Importar aquí la font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500;900&display=swap');
+
+
+
+/* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
+*  cuyos valores asigna por defecto el navegador.
+*/
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+}
+
+/* Para quitar los puntos a los items de listas */
+ul {
+    list-style: none;
+}
+
+/* Para que los enlaces hereden el color de texto y no tengan subrayado */
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+}
+
+/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
+*  el margin: auto; para tenerlo centrado fácilmente ;)
+*/
+body{
+    margin: 0%;
+    background-color: #fbfbfb;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    background-color: #fbfbfb;
+    
+
+    }
+    
+    .main{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .btns-container .fas{
+        font-size: 2rem;
+        padding: 10px;
+        color: #af599e;
+        cursor: pointer;
+    }
+    .btns-container .fas:nth-child(2){
+        display: none;
+    }
+    
+    /*  seccion aside */
+    .aside{
+        width: 100%;
+        height: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        background-color: #2d2d2e;
+        color: #ffff;
+        z-index: 1;
+
+    }
+    .show-nav{
+        height: 100%;
+        overflow: visible;
+    }
+    .aside-wrapper{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    
+    }
+    .logo-section{
+        min-height: 32vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+    }
+    .logo{
+        display: grid;
+        place-items: center;
+        text-decoration: none;
+    }
+    .logo img{
+        width: 120px;
+        height: auto;
+    }
+    
+    /* nav section starts here */
+    
+    .nav-links a{
+        display: block;
+        text-align: center;
+        line-height: 4rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #ffff;
+    }
+    .nav-links a:hover{
+        color: #af599e;
+    }
+    .nav-links a::before{
+        content: '';
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        background-color: #484849;
+    }
+    
+    /* social icons */
+    
+    .social-icons{
+        list-style: none;
+        display: flex;
+        margin-bottom: 30px;
+        padding: 0%;
+        gap: 10px;
+    }
+    .social-icons li .fa-brands{
+        width: 30px;
+        font-size: 1.5rem;
+    }
+    .social-icons li a{
+        text-decoration: none;
+        color: #ffff;
+    }
+    .social-icons li a:hover{
+        color: #af599e;
+    }
+    
+/*  seccion Inicio */
+#section-inicio{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 1.5rem; */
+    gap: 60px;
+}
+.box{
+    background-color: #d6d1f6;
+    position: relative;
+    width: 230px;
+    height: 270px;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    z-index: -1;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#af599e,#ae549c);
+    animation: animate 4s linear infinite;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: #d6d1f6;
+    border-radius: 16px;
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.box img{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    min-width: 100px;
+    z-index: 1;
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color: #d6d1f6;
+    opacity: 1;
+
+}
+.text-zone h1{
+    font-size: 3rem;
+    line-height: 45px;
+    letter-spacing: -3px;
+    position: relative;
+    color: black;
+}
+
+.text-zone .gray-text{
+    margin-top: 10px;
+    color: #88888d;
+    letter-spacing: 3px;
+    font-size: 14px;
+    position: relative;
+}
+
+/* contact me button */
+.contact-button{
+    text-decoration: none;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    letter-spacing: 3px;
+    position: relative;
+    text-align: center;
+    color: #af599e;
+    margin-top: 30px;
+}
+.contact-button div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition:  all .3s ease-in-out;
+}
+.contact-button span.bg{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -5px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    background-color: #af599e;
+    transform: skewX(-19deg);
+    
+}
+.contact-button:hover span.bg{
+    width: 110%;
+}
+.contact-button span.base{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: 1px solid #af599e;
+    box-sizing: border-box;
+    
+}
+.contact-button span.text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+.contact-button:hover span.text{
+    color: #1d1d1d;
+}
+
+/*  seccion Sobre mi */
+
+#section-sobreMi{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    /* padding-left: 1.5rem; */
+
+}
+.section-sobreMi h1{
+    color: #af599e;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.descripcion{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 85%;
+}
+
+.descripcion ol{
+    list-style: none;
+}
+
+/*  seccion Contacto */
+
+#section-contacto{
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 1.5rem; */
+    gap: 30px;
+}
+
+.descripcion2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    height: 60%;
+    background-color: rgba(175, 89, 158, 0.3);
+    border-radius: 20px;
+    padding: 20px 15px;
+    color: #0f0f0f;
+    margin: 20px 0;
+    gap: 40px;
+}
+
+.descripcion2 h1{
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+ 
+}
+
+/* contact me button Contacto */
+.contacto-button{
+    text-decoration: none;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    letter-spacing: 3px;
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+.contacto-button div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition:  all .3s ease-in-out;
+}
+.contacto-button span.bg{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -5px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    background-color: white;
+    transform: skewX(-19deg);
+    
+}
+.contacto-button:hover span.bg{
+    width: 110%;
+}
+.contacto-button span.base{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: 1px solid white;
+    box-sizing: border-box;
+    
+}
+.contacto-button span.text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+.contacto-button:hover span.text{
+    color: #1d1d1d;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color:  #af599e;
+    
+}
+
+footer .span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    color:  #fbfbfb;
+    font-size: 18px;
+}
+
+
+@media screen and (min-width: 950px) {
+    header{
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-left: 12%;
+    }
+    .btns-container{
+        display: none;
+    }
+
+    .aside{
+        width: 12%;
+        height: 100%;
+    }
+    .aside-wrapper{
+        height: 90vh;
+        
+    }
+    .logo-section{
+        min-height: 25vh;
+    }
+    .logo img{
+        padding-top: 50px;
+        width: 90px;
+        height: auto;
+    }
+    .social-icons{
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .social-icons li{
+        font-size: 1rem;
+    }
+
+    /* section Inicio */
+    #section-inicio{
+        padding-left: 7rem;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        gap: 30px;
+    }
+    .box{
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    .text-zone h1{
+        font-size: 6.3rem;
+        line-height: 85px;
+        letter-spacing: -6px;
+    }
+    .text-zone .gray-text{
+        font-size: 1rem;
+    }
+     /* seccion Sobre mi */
+    #section-sobreMi{
+        padding-left: 12rem;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+   
+    .descripcion h1{
+        display: flex;
+        align-self: baseline;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .descripcion p{
+        align-items: flex-start;
+        min-width: 180px;
+        padding-right: 10px;
+    }
+
+    /* seccion Contacto */
+
+    #section-contacto{
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        height: 60%;
+        padding-left: 20em;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+   
+    .descripcion2 h1{
+        display: flex;
+        align-self: baseline;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    /*
+    .image{
+        width: 40%;
+        padding: 10px;
+    } */
+
+    /* projects section
+    #section-projects{
+        padding-left: 13rem;
+    }
+    .title{
+        align-self: baseline;
+    }
+    .projects{
+    width: 95%;
+    height: 60%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 30px;
+    }
+
+    .containerCard{
+       flex-direction: row;
+    } */
+}
+
+
+/* Recomendaciones! 
+*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
+*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
+*
+*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
+*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
+*
+*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
+*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
+*
+*  - Usen mucho las herramientas para desarrolladores del navegador para ir
+*    probando el CSS que escriben, resolver dudas y problemas.
+*
+*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
+*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
+*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
+*/
